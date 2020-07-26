@@ -18,4 +18,16 @@ let sub = {
     auth: "eh_a0LuX32W_6hKNjmTTyg",
   },
 };
-push.sendNotification(sub, "test message");
+
+let sub2 = {
+  endpoint:
+    "https://fcm.googleapis.com/fcm/send/cGGfEiDdHtY:APA91bEVlbf6-zObbm9rT_rz7M6HznD0bq93Cqh38O79QD6EKlxqeqMGH_aSIZp2K6lulNE1LqiuPSm_m5bzu8wUK4u6fCz44YikxQ1KrTwThSSWcj447YZ22GXzpl4hPCpKSJ9Ihsgr",
+  expirationTime: null,
+  keys: {
+    p256dh:
+      "BA6OPuNYBi_T9UKSCMSbkNc9LOAwqtmy9lKi1C9ZKc2G4k6xSGTqIn-6xUr8Dxq-CxzMXAsXGd2C69jwonW3omY",
+    auth: "57imTtOuBEELG5-rLWm0PA",
+  },
+};
+push.sendNotification(sub2, "From 2nd deployed website");
+push.sendNotification(sub, "From 1st deployed");

@@ -10,7 +10,11 @@
     <button onClick="subscribe()">Subscribe</button>
     <script>
         addEventListener('load',async()=>{
-            let sw = await navigator.serviceWorker.register('./sw.js')
+            let sw = await navigator.serviceWorker.register(
+                self.addEventListener('push',(e)=>{
+                    e.waitUntil(self.registration.showNotification('test message',{}))
+                })
+            )
             console.log(sw);
         })
 
